@@ -1,0 +1,14 @@
+mainmodule test {
+  readonly CProxy_main mainProxy;
+  mainchare main {
+    entry main(CkArgMsg*);
+    entry [reductiontarget] void done(int);
+  };
+  array [1D] engine {
+    entry engine();
+    entry engine(int,int,int);
+    entry void simulate();
+    entry [aggregate(bufferSize : 20480, numDimensions : 2, thresholdNum : 1, thresholdDen : 2, cutoffNum : 1, cutoffDen : 2)] void ping(msg);
+  };
+};
+
